@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,8 +14,12 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import pw.jadams.mybicycleshopflamingo.R;
+import pw.jadams.mybicycleshopflamingo.db.Repository;
+import pw.jadams.mybicycleshopflamingo.entities.Part;
+import pw.jadams.mybicycleshopflamingo.entities.Product;
 
 public class ProductList extends AppCompatActivity {
+    private Repository repository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,16 @@ public class ProductList extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.sample) {
-            Toast.makeText(ProductList.this, "Sample Text String", Toast.LENGTH_SHORT).show();
+            repository = new Repository(getApplication());
+            //Toast.makeText(ProductList.this, "Sample Text String", Toast.LENGTH_SHORT).show();
+            Product product = new Product(0, "bicycle", 1000.00);
+            repository.insert(product);
+            product = new Product(1, "mountain bike", 4000.00);
+            repository.insert(product);
+            Part part = new Part(0, "frame", 300.00, 1);
+            repository.insert(part);
+            part = new Part(0, "spokes", 150.00, 1);
+            repository.insert(part);
             return true;
         }
 
