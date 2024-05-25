@@ -4,10 +4,10 @@ This project is a follow-along with the D308 **My Bicycle Shop Flaming** webinar
 
 ## Webinar Series Videos
 
-* [My Bicycle Shop Flamingo Part 1][1]
+* [My Bicycle Shop Flamingo Part 1 - Developing the User Interface and Navigation][1]
 * [My Bicycle Shop Flamingo Part 2 - Setting up the database][2]
-* [My Bicycle Shop Flamingo Part 3][3]
-* [My Bicycle Shop Flamingo Part 4][4]
+* [My Bicycle Shop Flamingo Part 3 - Displaying, Adding and Modifying Products and Parts][3]
+* [My Bicycle Shop Flamingo Part 4 - Finishing touches: Sharing Features, Notifications, Spinners][4]
 * [Android Bits: Signing your APK][5]
 * [Android Bits: Spinners and Popup Menus][6]
 * [Android Bits: DatePickers][7]
