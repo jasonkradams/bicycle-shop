@@ -14,4 +14,6 @@
     <string name="menu_delete_part">Delete Part</string>
     <string name="share_note">Share Note</string>
     <string name="notify">Notify</string>
+    <string name="channel_name">My Channel Name</string>
+    <string name="channel_description">My Channel Description</string>
 </resources>

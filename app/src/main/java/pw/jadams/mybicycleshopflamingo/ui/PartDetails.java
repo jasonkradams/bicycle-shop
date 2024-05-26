@@ -146,7 +146,6 @@ public class PartDetails extends AppCompatActivity {
 
         if (item.getItemId() == R.id.notify_part) {
             String dateFromScreen = editDate.getText().toString();
-            String myDateFormat = "MM/dd/yy"; //In which you need put here
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat(myDateFormat, Locale.US);
             Date myDate;
             try {
@@ -158,7 +157,7 @@ public class PartDetails extends AppCompatActivity {
                 assert myDate != null;
                 long trigger = myDate.getTime();
                 Intent intent = new Intent(PartDetails.this, MyReceiver.class);
-                intent.putExtra("key", "message I want to see");
+                intent.putExtra("key", "Notification Message Successful!");
                 PendingIntent sender = PendingIntent.getBroadcast(PartDetails.this, ++MainActivity.numAlert, intent, PendingIntent.FLAG_IMMUTABLE);
                 AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
                 alarmManager.set(AlarmManager.RTC_WAKEUP, trigger, sender);
