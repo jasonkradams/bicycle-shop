@@ -11,7 +11,7 @@ import pw.jadams.mybicycleshopflamingo.dao.ProductDao;
 import pw.jadams.mybicycleshopflamingo.entities.Part;
 import pw.jadams.mybicycleshopflamingo.entities.Product;
 
-@Database(entities = {Product.class, Part.class}, version = 1, exportSchema = false)
+@Database(entities = {Product.class, Part.class}, version = 3, exportSchema = false)
 public abstract class BicycleDatabaseBuilder extends RoomDatabase {
     public abstract ProductDao productDao();
 

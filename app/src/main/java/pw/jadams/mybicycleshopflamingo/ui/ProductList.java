@@ -10,8 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.List;
 
 import pw.jadams.mybicycleshopflamingo.R;
 import pw.jadams.mybicycleshopflamingo.db.Repository;
@@ -39,6 +43,13 @@ public class ProductList extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewProductList);
+        repository = new Repository(getApplication());
+        List<Product> allProducts = repository.getmAllProducts();
+        final ProductAdapter productAdapter = new ProductAdapter(this);
+        recyclerView.setAdapter(productAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        productAdapter.setProducts(allProducts);
     }
 
     @Override
@@ -49,16 +60,20 @@ public class ProductList extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.sample) {
+        if (item.getItemId() == R.id.add_sample_code) {
             repository = new Repository(getApplication());
             //Toast.makeText(ProductList.this, "Sample Text String", Toast.LENGTH_SHORT).show();
             Product product = new Product(0, "bicycle", 1000.00);
             repository.insert(product);
-            product = new Product(1, "mountain bike", 4000.00);
+            product = new Product(0, "mountain bike", 4000.00);
             repository.insert(product);
             Part part = new Part(0, "frame", 300.00, 1);
             repository.insert(part);
             part = new Part(0, "spokes", 150.00, 1);
+            repository.insert(part);
+            part = new Part(0, "tough tires", 150.00, 2);
+            repository.insert(part);
+            part = new Part(0, "crash helmet", 150.00, 2);
             repository.insert(part);
             return true;
         }
@@ -68,5 +83,16 @@ public class ProductList extends AppCompatActivity {
             return true;
         }
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        List<Product> allProducts = repository.getmAllProducts();
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewProductList);
+        final ProductAdapter productAdapter = new ProductAdapter(this);
+        recyclerView.setAdapter(productAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        productAdapter.setProducts(allProducts);
     }
 }

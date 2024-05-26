@@ -43,7 +43,7 @@ public class Part {
     }
 
     public int getProductId() {
-        return productId;
+        return this.productId;
     }
 
     public void setProductId(int productId) {
