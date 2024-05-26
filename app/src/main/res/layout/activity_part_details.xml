@@ -103,13 +103,15 @@
                     android:padding="10dp"
                     android:text="@string/date_label" />
 
-                <EditText
+                <TextView
                     android:id="@+id/editPartDate"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:autofillHints="Part Date"
                     android:hint="@string/date"
-                    android:inputType="date"
+                    android:inputType="none"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
                     android:minHeight="48dp" />
             </LinearLayout>
 
