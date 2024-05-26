@@ -2,10 +2,16 @@
     <string name="app_name">My Bicycle Shop Flamingo</string>
     <string name="title_label">Title: </string>
     <string name="price_label">Price: </string>
+    <string name="note_label">Note: </string>
+    <string name="date_label">Date: </string>
     <string name="title">title</string>
     <string name="price">price</string>
+    <string name="note">note</string>
+    <string name="date">date</string>
     <string name="menu_save_product">Save Product</string>
     <string name="menu_delete_product">Delete Product</string>
     <string name="menu_save_part">Save Part</string>
     <string name="menu_delete_part">Delete Part</string>
+    <string name="share_note">Share Note</string>
+    <string name="notify">Notify</string>
 </resources>

@@ -51,6 +51,7 @@ public class ProductDetails extends AppCompatActivity {
         FloatingActionButton floatingActionButton = findViewById(R.id.floatingActionButtonProductDetails);
         floatingActionButton.setOnClickListener(v -> {
             Intent intent = new Intent(ProductDetails.this, PartDetails.class);
+            intent.putExtra("productId", productId);
             startActivity(intent);
         });
 
