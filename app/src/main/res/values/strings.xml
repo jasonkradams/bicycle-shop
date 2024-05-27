@@ -16,4 +16,7 @@
     <string name="notify">Notify</string>
     <string name="channel_name">My Channel Name</string>
     <string name="channel_description">My Channel Description</string>
+    <string name="my_bicycle_shop_flamingo">My Bicycle Shop Flamingo</string>
+    <string name="enter">Enter</string>
+    <string name="flamingo_riding_a_bicycle">Flamingo Riding a Bicycle</string>
 </resources>

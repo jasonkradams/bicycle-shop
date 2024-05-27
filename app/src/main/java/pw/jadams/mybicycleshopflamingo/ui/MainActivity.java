@@ -2,7 +2,6 @@ package pw.jadams.mybicycleshopflamingo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +15,7 @@ import pw.jadams.mybicycleshopflamingo.R;
 public class MainActivity extends AppCompatActivity {
 
     public static int numAlert;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,12 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Floating Action Button
         Button button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ProductList.class);
-                startActivity(intent);
-            }
+        button.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, ProductList.class);
+            startActivity(intent);
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
